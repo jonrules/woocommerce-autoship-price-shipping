@@ -103,7 +103,7 @@ class WC_Autoship_Price_Shipping extends WC_Shipping_Method {
 			if ( $subtotal >= floatval( $rate_row['min_subtotal'] ) ) {
 				$rate = array(
 					'id' => $this->id,
-					'label' => $rate_row['label'],
+					'label' => ! empty( $rate_row['label'] ) ? $rate_row['label'] : __( 'Shipping', 'wc-autoship-price-shipping' ),
 					'cost' => $rate_row['cost'],
 					'calc_tax' => ( $this->is_taxable() ) ? 'per_order' : ''
 				);
