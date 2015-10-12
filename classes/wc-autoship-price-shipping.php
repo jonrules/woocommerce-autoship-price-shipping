@@ -120,6 +120,9 @@ class WC_Autoship_Price_Shipping extends WC_Shipping_Method {
 	 * @return bool
 	 */
 	public function is_available( $package ) {
+		if ( is_cart() || is_checkout() ) {
+			return false;
+		}
 		return true;
 	}
 }

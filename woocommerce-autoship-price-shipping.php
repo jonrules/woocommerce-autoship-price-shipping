@@ -37,6 +37,11 @@ if ( is_plugin_active( 'woocommerce-autoship/woocommerce-autoship.php' ) ) {
 	}
 	add_filter( 'woocommerce_shipping_methods', 'wc_autoship_price_shipping_add_methods', 10, 1 );
 	
+	function wc_autoship_price_shipping_valid_ids( $method_ids ) {
+		return array( 'wc_autoship_price_shipping' );
+	}
+	add_filter( 'wc_autoship_valid_shipping_method_ids', 'wc_autoship_price_shipping_valid_ids', 10, 1 );
+	
 	function wc_autoship_price_shipping_compare_min_subtotal( $a, $b ) {
 		$a_min_subtotal = intval( floatval( $a['min_subtotal'] ) * 100 );
 		$b_min_subtotal = intval( floatval( $b['min_subtotal'] ) * 100 );
