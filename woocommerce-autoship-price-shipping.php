@@ -3,7 +3,7 @@
 Plugin Name: WC Auto-Ship Price Shipping
 Plugin URI: http://wooautoship.com
 Description: Price-based shipping rates for WC Auto-Ship
-Version: 1.0
+Version: 1.0.0
 Author: Patterns in the Cloud
 Author URI: http://patternsinthecloud.com
 License: Single-site
